@@ -5,5 +5,39 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DailyPlanner.MainWindow"
         Title="DailyPlanner">
-    Welcome to Avalonia!
+
+    <StackPanel
+        >
+        <StackPanel>
+            <TextBlock Margin="25 25 0 0">Nazwa zadania</TextBlock>
+            <TextBox
+                x:Name="TaskName"
+                Width="230"
+                Margin="25 8"
+                HorizontalAlignment="Left"
+            >
+            </TextBox>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Margin="25 25 0 0">Wybór kategorii zadania</TextBlock>
+            <ComboBox 
+                x:Name="TaskCategory"
+                Width="230"
+                Margin="25 8"
+                >
+                <ComboBoxItem Content="Praca"/>
+                <ComboBoxItem Content="Sprzątanie"/>
+                <ComboBoxItem Content="Zakupy"/>
+            </ComboBox>
+        </StackPanel>
+        <Button
+            x:Name="SubmitData"
+            Padding="8"
+            Margin="25 35"
+            Content="Prześlij dane"
+            >
+            <!-- TODO: add grid layout -->
+            <!-- TODO: add Zadanie class -->
+        </Button>
+    </StackPanel>
 </Window>
