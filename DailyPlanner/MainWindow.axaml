@@ -36,7 +36,6 @@
             Margin="25 35"
             Content="Prześlij dane"
             >
-            <!-- TODO: add Zadanie class -->
         </Button>
     </StackPanel>
 </Window>
