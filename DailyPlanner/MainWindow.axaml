@@ -5,49 +5,41 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DailyPlanner.MainWindow"
         Title="DailyPlanner">
-
-    <StackPanel
-        >
+    
+    <StackPanel>
         <StackPanel>
             <TextBlock Margin="25 25 0 0">Nazwa zadania</TextBlock>
-            <TextBox
-                x:Name="TaskName"
-                Width="230"
-                Margin="25 8"
-                HorizontalAlignment="Left"
-            >
-            </TextBox>
+            <TextBox x:Name="InputTaskName" Width="230" Margin="25 8" HorizontalAlignment="Left"/>
         </StackPanel>
         <StackPanel>
             <TextBlock Margin="25 25 0 0">Wybór kategorii zadania</TextBlock>
-            <ComboBox 
-                x:Name="TaskCategory"
-                Width="230"
-                Margin="25 8"
-                >
+            <ComboBox x:Name="TaskCategory" Width="230" Margin="25 8">
                 <ComboBoxItem Content="Praca"/>
                 <ComboBoxItem Content="Sprzątanie"/>
                 <ComboBoxItem Content="Zakupy"/>
             </ComboBox>
         </StackPanel>
-        <Button
-            x:Name="SubmitData"
-            Padding="8"
-            Margin="25 35"
-            Content="Prześlij dane"
-            >
-        </Button>
+        <Button x:Name="SubmitData" Padding="8" Margin="25 35" Content="Prześlij dane" Click="OnSubmit"></Button>
+        
+        
+        <!-- drugie -->
+        
         <StackPanel>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+            <Grid ColumnDefinitions="Auto Auto Auto Auto" Background="SeaGreen" Height="70">
+                <TextBlock Grid.Column="0" x:Name="DisplayTaskName" VerticalAlignment="Center" Margin="15 0">
+                    Nazwa
+                </TextBlock>
+                <ComboBox Grid.Column="1" VerticalAlignment="Center" Width="120" Margin="15 0">
+                    <ComboBoxItem Content="Praca"/>
+                    <ComboBoxItem Content="Sprzątanie"/>
+                    <ComboBoxItem Content="Zakupy"/>
+                </ComboBox>
+                <CheckBox Grid.Column="2" VerticalAlignment="Center" Margin="15 0">
+                    CheckBox: oznaczenie zadania jako ukończonego.
+                </CheckBox>
+                <Button Grid.Column="3" VerticalAlignment="Center" Margin="15 0" Padding="8">
+                    Usuń zadanie
+                </Button>
             </Grid>
         </StackPanel>
     </StackPanel>

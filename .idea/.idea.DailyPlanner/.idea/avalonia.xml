@@ -3,6 +3,7 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="DailyPlanner/App.axaml" value="DailyPlanner/DailyPlanner.csproj" />
         <entry key="DailyPlanner/MainWindow.axaml" value="DailyPlanner/DailyPlanner.csproj" />
       </map>
     </option>
