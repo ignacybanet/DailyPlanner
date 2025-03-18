@@ -1,20 +1,15 @@
+using System.Collections.Generic;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 
 namespace DailyPlanner;
 
-class Zadanie
-{
-    public Zadanie()
-    {
-        string Nazwa;
-        string Kategoria;
-        bool CzyUkonczone;
-    }
-}
 
 public partial class MainWindow : Window
 {
+    List<Zadanie> listaZadan = new ();
+    
+    
     public MainWindow()
     {
         InitializeComponent();
@@ -22,6 +17,6 @@ public partial class MainWindow : Window
 
     private void OnSubmit(object? sender, RoutedEventArgs e)
     {
-        DisplayTaskName.Text = InputTaskName.Text;
+        var noweZadanie = new Zadanie(InputTaskName.Text, "feefwf");
     }
 }

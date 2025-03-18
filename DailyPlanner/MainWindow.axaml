@@ -2,9 +2,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="1000"
         x:Class="DailyPlanner.MainWindow"
-        Title="DailyPlanner">
+        Title="DailyPlanner"
+        Background="#bbb">
     
     <StackPanel>
         <StackPanel>
@@ -19,13 +20,17 @@
                 <ComboBoxItem Content="Zakupy"/>
             </ComboBox>
         </StackPanel>
+        <TextBlock Margin="25 25 0 0">Numer zadania do edycji</TextBlock>
+        <NumericUpDown x:Name="WhichTaskToEdit" Width="230" Margin="25 8" HorizontalAlignment="Left" FormatString="0" Minimum="1" Maximum="3">
+            
+        </NumericUpDown>
         <Button x:Name="SubmitData" Padding="8" Margin="25 35" Content="Prześlij dane" Click="OnSubmit"></Button>
         
         
         <!-- drugie -->
-        
         <StackPanel>
-            <Grid ColumnDefinitions="Auto Auto Auto Auto" Background="SeaGreen" Height="70">
+            <!-- pierwszy rzad -->
+            <Grid ColumnDefinitions="Auto Auto Auto Auto" RowDefinitions="Auto Auto Auto Auto" Background="#919191">
                 <TextBlock Grid.Column="0" x:Name="DisplayTaskName" VerticalAlignment="Center" Margin="15 0">
                     Nazwa
                 </TextBlock>
@@ -38,6 +43,54 @@
                     CheckBox: oznaczenie zadania jako ukończonego.
                 </CheckBox>
                 <Button Grid.Column="3" VerticalAlignment="Center" Margin="15 0" Padding="8">
+                    Usuń zadanie
+                </Button>
+                
+                <!-- drugi rzad -->
+                <TextBlock Grid.Row="1" Grid.Column="0" x:Name="DisplayTaskName2" VerticalAlignment="Center" Margin="15 0">
+                    Nazwa
+                </TextBlock>
+                <ComboBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Width="120" Margin="15 0">
+                    <ComboBoxItem Content="Praca"/>
+                    <ComboBoxItem Content="Sprzątanie"/>
+                    <ComboBoxItem Content="Zakupy"/>
+                </ComboBox>
+                <CheckBox Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Margin="15 0">
+                    CheckBox: oznaczenie zadania jako ukończonego.
+                </CheckBox>
+                <Button Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" Margin="15 0" Padding="8">
+                    Usuń zadanie
+                </Button>
+                
+                <!-- trzeci rzad -->
+                <TextBlock Grid.Row="2" Grid.Column="0" x:Name="DisplayTaskName3" VerticalAlignment="Center" Margin="15 0">
+                    Nazwa
+                </TextBlock>
+                <ComboBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Width="120" Margin="15 0">
+                    <ComboBoxItem Content="Praca"/>
+                    <ComboBoxItem Content="Sprzątanie"/>
+                    <ComboBoxItem Content="Zakupy"/>
+                </ComboBox>
+                <CheckBox Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Margin="15 0">
+                    CheckBox: oznaczenie zadania jako ukończonego.
+                </CheckBox>
+                <Button Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" Margin="15 0" Padding="8">
+                    Usuń zadanie
+                </Button>
+                
+                <!-- czwarty rzad -->
+                <TextBlock Grid.Row="3" Grid.Column="0" x:Name="DisplayTaskName4" VerticalAlignment="Center" Margin="15 0">
+                    Nazwa
+                </TextBlock>
+                <ComboBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Width="120" Margin="15 0">
+                    <ComboBoxItem Content="Praca"/>
+                    <ComboBoxItem Content="Sprzątanie"/>
+                    <ComboBoxItem Content="Zakupy"/>
+                </ComboBox>
+                <CheckBox Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Margin="15 0">
+                    CheckBox: oznaczenie zadania jako ukończonego.
+                </CheckBox>
+                <Button Grid.Row="3" Grid.Column="3" VerticalAlignment="Center" Margin="15 0" Padding="8">
                     Usuń zadanie
                 </Button>
             </Grid>
