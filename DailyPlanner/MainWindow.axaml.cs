@@ -32,4 +32,24 @@ public partial class MainWindow : Window
                 break;
         }
     }
+    
+    private void DeleteTask1(object? sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+    
+    private void DeleteTask2(object? sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+    
+    private void DeleteTask3(object? sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+    
+    private void DeleteTask4(object? sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
 }
