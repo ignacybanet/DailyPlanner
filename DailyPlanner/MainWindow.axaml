@@ -7,117 +7,124 @@
         Title="DailyPlanner"
         Background="#bbb">
     
-    <StackPanel>
-        
+    <StackPanel> <!-- wszystko -->
         <StackPanel> <!-- formularz -->
             <StackPanel>
                 <TextBlock Margin="25 25 0 0">Nazwa zadania</TextBlock>
-                <TextBox x:Name="InputNazwaZadania" Width="230" Margin="25 8" HorizontalAlignment="Left"/>
+                <TextBox x:Name="InputNazwaZadania" Width="230" Margin="25 8" HorizontalAlignment="Left" />
             </StackPanel>
-            
+
             <StackPanel>
                 <TextBlock Margin="25 25 0 0">Wybór kategorii zadania</TextBlock>
                 <ComboBox x:Name="InputWyborKategoriiZadania" Width="230" Margin="25 8">
+                    <ComboBoxItem Content="Praca" />
+                    <ComboBoxItem Content="Sprzątanie" />
+                    <ComboBoxItem Content="Zakupy" />
+                </ComboBox>
+            </StackPanel>
+
+            <TextBlock Margin="25 25 0 0">Numer zadania do edycji</TextBlock>
+
+            <NumericUpDown x:Name="InputNumerZadaniaDoEdycji" Width="230" Margin="25 8" HorizontalAlignment="Left"
+                           FormatString="0" Minimum="1" Maximum="4" />
+
+            <Button x:Name="SubmitData" Padding="8" Margin="25 35" Content="Prześlij dane" Click="OnSubmit"></Button>
+        </StackPanel>
+        
+        
+        
+        <!-- panel z planerem -->
+        <StackPanel>
+            
+            <!-- pierwszy rzad -->
+            <Grid ColumnDefinitions="Auto Auto Auto Auto" RowDefinitions="Auto Auto Auto Auto" Background="#919191">
+                
+                <TextBlock Grid.Row="0" Grid.Column="0" x:Name="DisplayTaskName1" VerticalAlignment="Center" Margin="15 0">
+                    Nazwa
+                </TextBlock>
+                
+                <ComboBox x:Name="PlannerComboBox1" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Width="120" Margin="15 0">
                     <ComboBoxItem Content="Praca"/>
                     <ComboBoxItem Content="Sprzątanie"/>
                     <ComboBoxItem Content="Zakupy"/>
                 </ComboBox>
-            </StackPanel>
-            
-            <TextBlock Margin="25 25 0 0">Numer zadania do edycji</TextBlock>
-            
-            <NumericUpDown x:Name="InputNumerZadaniaDoEdycji" Width="230" Margin="25 8" HorizontalAlignment="Left" FormatString="0" Minimum="1" Maximum="4"/>
-            
-            <Button x:Name="SubmitData" Padding="8" Margin="25 35" Content="Prześlij dane" Click="OnSubmit"></Button>
-            
-            
-            
-            <!-- panel z planerem -->
-            <StackPanel>
                 
-                <!-- pierwszy rzad -->
-                <Grid ColumnDefinitions="Auto Auto Auto Auto" RowDefinitions="Auto Auto Auto Auto" Background="#919191">
-                    
-                    <TextBlock Grid.Row="0" Grid.Column="0" x:Name="DisplayTaskName1" VerticalAlignment="Center" Margin="15 0">
-                        Nazwa
-                    </TextBlock>
-                    
-                    <ComboBox x:Name="PlannerComboBox1" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Width="120" Margin="15 0">
-                        <ComboBoxItem Content="Praca"/>
-                        <ComboBoxItem Content="Sprzątanie"/>
-                        <ComboBoxItem Content="Zakupy"/>
-                    </ComboBox>
-                    
-                    <CheckBox Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="15 0">
-                        ukończone
-                    </CheckBox>
-                    
-                    <Button Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" Margin="15 0" Padding="8" Click="DeleteTask1">
-                        Usuń zadanie
-                    </Button>
-                    
-                    
-                    <!-- drugi rzad -->
-                    <TextBlock Grid.Row="1" Grid.Column="0" x:Name="DisplayTaskName2" VerticalAlignment="Center" Margin="15 0">
-                        Nazwa
-                    </TextBlock>
-                    
-                    <ComboBox  x:Name="PlannerComboBox2" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Width="120" Margin="15 0">
-                        <ComboBoxItem Content="Praca"/>
-                        <ComboBoxItem Content="Sprzątanie"/>
-                        <ComboBoxItem Content="Zakupy"/>
-                    </ComboBox>
-                    
-                    <CheckBox Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Margin="15 0">
-                        ukończone
-                    </CheckBox>
-                    
-                    <Button Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" Margin="15 0" Padding="8" Click="DeleteTask2">
-                        Usuń zadanie
-                    </Button>
-                    
-                    
-                    <!-- trzeci rzad -->
-                    <TextBlock Grid.Row="2" Grid.Column="0" x:Name="DisplayTaskName3" VerticalAlignment="Center" Margin="15 0">
-                        Nazwa
-                    </TextBlock>
-                    
-                    <ComboBox  x:Name="PlannerComboBox3" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Width="120" Margin="15 0">
-                        <ComboBoxItem Content="Praca"/>
-                        <ComboBoxItem Content="Sprzątanie"/>
-                        <ComboBoxItem Content="Zakupy"/>
-                    </ComboBox>
-                    
-                    <CheckBox Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Margin="15 0">
-                        ukończone
-                    </CheckBox>
-                    
-                    <Button Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" Margin="15 0" Padding="8" Click="DeleteTask3">
-                        Usuń zadanie
-                    </Button>
-                    
-                    
-                    <!-- czwarty rzad -->
-                    
-                    <TextBlock Grid.Row="3" Grid.Column="0" x:Name="DisplayTaskName4" VerticalAlignment="Center" Margin="15 0">
-                        Nazwa
-                    </TextBlock>
-                    
-                    <ComboBox  x:Name="PlannerComboBox4" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Width="120" Margin="15 0">
-                        <ComboBoxItem Content="Praca"/>
-                        <ComboBoxItem Content="Sprzątanie"/>
-                        <ComboBoxItem Content="Zakupy"/>
-                    </ComboBox>
-                    
-                    <CheckBox Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Margin="15 0">
-                        ukończone
-                    </CheckBox>
-                    
-                    <Button Grid.Row="3" Grid.Column="3" VerticalAlignment="Center" Margin="15 0" Padding="8" Click="DeleteTask4">
-                        Usuń zadanie
-                    </Button>
-                </Grid>
-            </StackPanel>
+                <CheckBox x:Name="PlannerCheckbox1" Unchecked="OnUncheck1" Checked="OnCheck1" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="15 0">
+                    ukończone
+                </CheckBox>
+                
+                <Button x:Name="PlannerButton1" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" Margin="15 0" Padding="8" Click="DeleteTask1">
+                    Usuń zadanie
+                </Button>
+                
+                
+                <!-- drugi rzad -->
+                <TextBlock Grid.Row="1" Grid.Column="0" x:Name="DisplayTaskName2" VerticalAlignment="Center" Margin="15 0">
+                    Nazwa
+                </TextBlock>
+                
+                <ComboBox  x:Name="PlannerComboBox2" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Width="120" Margin="15 0">
+                    <ComboBoxItem Content="Praca"/>
+                    <ComboBoxItem Content="Sprzątanie"/>
+                    <ComboBoxItem Content="Zakupy"/>
+                </ComboBox>
+                
+                <CheckBox x:Name="PlannerCheckbox2" Unchecked="OnUncheck2" Checked="OnCheck2" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Margin="15 0">
+                    ukończone
+                </CheckBox>
+                
+                <Button x:Name="PlannerButton2" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" Margin="15 0" Padding="8" Click="DeleteTask2">
+                    Usuń zadanie
+                </Button>
+                
+                
+                <!-- trzeci rzad -->
+                <TextBlock Grid.Row="2" Grid.Column="0" x:Name="DisplayTaskName3" VerticalAlignment="Center" Margin="15 0">
+                    Nazwa
+                </TextBlock>
+                
+                <ComboBox  x:Name="PlannerComboBox3" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Width="120" Margin="15 0">
+                    <ComboBoxItem Content="Praca"/>
+                    <ComboBoxItem Content="Sprzątanie"/>
+                    <ComboBoxItem Content="Zakupy"/>
+                </ComboBox>
+                
+                <CheckBox x:Name="PlannerCheckbox3" Unchecked="OnUncheck3" Checked="OnCheck3" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Margin="15 0">
+                    ukończone
+                </CheckBox>
+                
+                <Button x:Name="PlannerButton3" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" Margin="15 0" Padding="8" Click="DeleteTask3">
+                    Usuń zadanie
+                </Button>
+                
+                
+                <!-- czwarty rzad -->
+                
+                <TextBlock Grid.Row="3" Grid.Column="0" x:Name="DisplayTaskName4" VerticalAlignment="Center" Margin="15 0">
+                    Nazwa
+                </TextBlock>
+                
+                <ComboBox  x:Name="PlannerComboBox4" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Width="120" Margin="15 0">
+                    <ComboBoxItem Content="Praca"/>
+                    <ComboBoxItem Content="Sprzątanie"/>
+                    <ComboBoxItem Content="Zakupy"/>
+                </ComboBox>
+                
+                <CheckBox x:Name="PlannerCheckbox4" Unchecked="OnUncheck4" Checked="OnCheck4" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Margin="15 0">
+                    ukończone
+                </CheckBox>
+                
+                <Button x:Name="PlannerButton4" Grid.Row="3" Grid.Column="3" VerticalAlignment="Center" Margin="15 0" Padding="8" Click="DeleteTask4">
+                    Usuń zadanie
+                </Button>
+            </Grid>
+        </StackPanel>
+        
+        <StackPanel>
+            <TextBlock Margin="25 45">
+                Wszystkie zadania: 4<LineBreak/>
+                Liczba ukończonych zadań: <TextBlock x:Name="CompletedTasks">0</TextBlock>
+            </TextBlock>
         </StackPanel>
     </StackPanel>
 </Window>
