@@ -26,7 +26,7 @@
             
             <TextBlock Margin="25 25 0 0">Numer zadania do edycji</TextBlock>
             
-            <NumericUpDown x:Name="InputNumerZadaniaDoEdycji" Width="230" Margin="25 8" HorizontalAlignment="Left" FormatString="0" Minimum="1" Maximum="3"/>
+            <NumericUpDown x:Name="InputNumerZadaniaDoEdycji" Width="230" Margin="25 8" HorizontalAlignment="Left" FormatString="0" Minimum="1" Maximum="4"/>
             
             <Button x:Name="SubmitData" Padding="8" Margin="25 35" Content="Prześlij dane" Click="OnSubmit"></Button>
             
@@ -38,7 +38,7 @@
                 <!-- pierwszy rzad -->
                 <Grid ColumnDefinitions="Auto Auto Auto Auto" RowDefinitions="Auto Auto Auto Auto" Background="#919191">
                     
-                    <TextBlock Grid.Row="0" Grid.Column="0" x:Name="DisplayTaskName" VerticalAlignment="Center" Margin="15 0">
+                    <TextBlock Grid.Row="0" Grid.Column="0" x:Name="DisplayTaskName1" VerticalAlignment="Center" Margin="15 0">
                         Nazwa
                     </TextBlock>
                     
