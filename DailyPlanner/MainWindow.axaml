@@ -7,6 +7,7 @@
         Title="DailyPlanner"
         Background="#bbb">
     
+    <!-- formularz -->
     <StackPanel>
         <StackPanel>
             <TextBlock Margin="25 25 0 0">Nazwa zadania</TextBlock>
@@ -27,22 +28,22 @@
         <Button x:Name="SubmitData" Padding="8" Margin="25 35" Content="Prześlij dane" Click="OnSubmit"></Button>
         
         
-        <!-- drugie -->
+        <!-- panel z planerem -->
         <StackPanel>
             <!-- pierwszy rzad -->
             <Grid ColumnDefinitions="Auto Auto Auto Auto" RowDefinitions="Auto Auto Auto Auto" Background="#919191">
-                <TextBlock Grid.Column="0" x:Name="DisplayTaskName" VerticalAlignment="Center" Margin="15 0">
+                <TextBlock Grid.Row="0" Grid.Column="0" x:Name="DisplayTaskName" VerticalAlignment="Center" Margin="15 0">
                     Nazwa
                 </TextBlock>
-                <ComboBox Grid.Column="1" VerticalAlignment="Center" Width="120" Margin="15 0">
+                <ComboBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Width="120" Margin="15 0">
                     <ComboBoxItem Content="Praca"/>
                     <ComboBoxItem Content="Sprzątanie"/>
                     <ComboBoxItem Content="Zakupy"/>
                 </ComboBox>
-                <CheckBox Grid.Column="2" VerticalAlignment="Center" Margin="15 0">
+                <CheckBox Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="15 0">
                     CheckBox: oznaczenie zadania jako ukończonego.
                 </CheckBox>
-                <Button Grid.Column="3" VerticalAlignment="Center" Margin="15 0" Padding="8">
+                <Button Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" Margin="15 0" Padding="8">
                     Usuń zadanie
                 </Button>
                 
